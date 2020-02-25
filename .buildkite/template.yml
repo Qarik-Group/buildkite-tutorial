@@ -1,3 +1,6 @@
+name: "Buildkite Tutorial by Stark & Wayne"
+description: |
+  Learning to :pipeline: is fun.
 steps:
 - label: ":pipeline:"
   command: buildkite-agent pipeline upload .buildkite/pipeline.show-environment.yml
