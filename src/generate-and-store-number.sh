@@ -11,6 +11,9 @@ generated_number=$(generate_number)
 
 if [[ -n "$parallel_index" ]]; then
   ( set -x ; buildkite-agent meta-data set "generated-number::$parallel_index" "${generated_number}" )
+  echo
 else
   ( set -x ; buildkite-agent meta-data set "generated-number" "${generated_number}" )
 fi
+
+echo
