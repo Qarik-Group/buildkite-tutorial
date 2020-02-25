@@ -2,5 +2,7 @@ steps:
 - label: ":hash:"
   command: ./src/generate-and-store-number.sh
 
+- wait
+
 - label: ":desktop_computer:"
   command: ./src/fetch-and-display-number.sh
