@@ -8,7 +8,7 @@ echo "steps:"
 for((i=0;i<generated_number;i++));
 do
   cat <<YAML
-- label: ":hash:"
+- label: "$i"
   command: ./src/generate-and-store-number.sh $i
 YAML
 done
