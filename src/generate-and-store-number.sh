@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function generate_number() {
-  MAX_NUMBER=${MAX_NUMBER:-10}
-  echo $(( $RANDOM % $MAX_NUMBER ))
+  MAX_NUMBER=${MAX_NUMBER:-9}
+  echo $(( $RANDOM % $MAX_NUMBER + 1))
 }
 
 parallel_index=${1:-}
