@@ -20,9 +20,9 @@ Now click "New Build" in the top right. Enter an arbitrary message. It can inclu
 
 The pipeline will wait forever until a Buildkite Agent is provided.
 
-We can install and run `buildkite-agent start` to freely host [Buildkite Agent](buildkite.com/agent) on our local machine:
+We can install and run `buildkite-agent start --spawn 2` to freely host some [Buildkite Agents](buildkite.com/agent) on our local machine:
 
-![buildkite-agent start](images/buildkite-agent-start-local.png)
+![buildkite-agent start](images/buildkite-agent-start-local-spawn-2.png)
 
 The Agent will be immediately allocated work to do from our pending pipeline.
 
