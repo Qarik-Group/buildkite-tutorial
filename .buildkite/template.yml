@@ -1,0 +1,3 @@
+steps:
+- label: ":pipeline:"
+  command: buildkite-agent pipeline upload .buildkite/pipeline.show-environment.yml
