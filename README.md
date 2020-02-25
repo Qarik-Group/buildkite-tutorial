@@ -6,3 +6,10 @@ Click the following button to start the tutorial on your [free Buildkite account
 
 [![Start tutorial on Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
+## Run locally
+
+Each pipeline in `.buildkite` folder can be run locally -- without setting up the Pipeline on buildkite.com -- using the `bk` CLI:
+
+```plain
+bk local run .buildkite/pipeline.show-environment.yml
+```
