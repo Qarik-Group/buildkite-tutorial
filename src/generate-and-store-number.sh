@@ -5,4 +5,12 @@ function generate_number() {
   echo $(( $RANDOM % $MAX_NUMBER ))
 }
 
-buildkite-agent meta-data set generated-number "$(generate_number)"
+parallel_index=${1:-}
+
+generated_number=$(generate_number)
+
+if [[ -n "$parallel_index" ]]; then
+  ( set -x ; buildkite-agent meta-data set "generated-number::$parallel_index" "${generated_number}" )
+else
+  ( set -x ; buildkite-agent meta-data set "generated-number" "${generated_number}" )
+fi
