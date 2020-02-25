@@ -1,0 +1,15 @@
+steps:
+- label: ":hash:"
+  command: ./src/generate-and-store-number.sh
+
+- wait
+
+- block: ":incoming_envelope: generate"
+  prompt: "Should we generate some numbers?"
+- label: ":pipeline:"
+  command: ./src/generate-steps-from-stored-number.sh | buildkite-agent pipeline upload
+
+- wait
+
+- label: ":desktop_computer:"
+  command: ./src/fetch-and-display-number.sh collect
