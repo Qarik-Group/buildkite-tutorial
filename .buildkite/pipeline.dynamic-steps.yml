@@ -10,4 +10,4 @@ steps:
 - wait
 
 - label: ":desktop_computer:"
-  command: ./src/fetch-and-display-number.sh
+  command: ./src/fetch-and-display-number.sh collect

@@ -4,7 +4,7 @@ set -e
 
 generated_number=$(buildkite-agent meta-data get generated-number)
 
-echo "steps:" 
+echo "steps:"
 for((i=0;i<generated_number;i++));
 do
   cat <<YAML
