@@ -1,0 +1,6 @@
+steps:
+- label: ":hash:"
+  command: ./src/generate-and-store-number.sh
+
+- label: ":desktop_computer:"
+  command: ./src/fetch-and-display-number.sh
