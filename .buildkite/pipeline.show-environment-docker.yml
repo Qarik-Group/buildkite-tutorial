@@ -1,0 +1,15 @@
+steps:
+  - label: ":ubuntu:"
+    command: ./src/show_environment.sh
+    artifact_paths: "."
+    plugins:
+      - docker#v3.5.0:
+          image: "ubuntu:latest"
+          propagate-environment: true
+  - label: ":ski: missing bash"
+    command: ./src/show_environment.sh
+    artifact_paths: "."
+    plugins:
+      - docker#v3.5.0:
+          image: "alpine:latest"
+          propagate-environment: true
