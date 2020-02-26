@@ -5,6 +5,7 @@ steps:
       - docker#v3.5.0:
           image: "starkandwayne/buildkite-base:latest"
           propagate-environment: true
+          mount-buildkite-agent: true
 
   - wait
 
@@ -14,3 +15,4 @@ steps:
       - docker#v3.5.0:
           image: "starkandwayne/buildkite-base:latest"
           propagate-environment: true
+          mount-buildkite-agent: true
