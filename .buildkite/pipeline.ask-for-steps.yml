@@ -1,0 +1,28 @@
+steps:
+- block: ":ballot_box_with_ballot:"
+  prompt: "We robots have questions. Many questions."
+  fields:
+  - text: "How many steps to create?"
+    key: "generated-number"
+    hint: "Think of any number. But a positive number. And not too large, please."
+  - select: "Do you have a favorite?"
+    key: "favourite-thing"
+    options:
+    - label: ":green_apple:"
+      value: "green_apple"
+    - label: ":apple:"
+      value: "apple"
+    - label: ":pear:"
+      value: "pear"
+    - label: ":cherries:"
+      value: "cherries"
+    - label: ":strawberry:"
+      value: "strawberry"
+
+- label: ":pipeline:"
+  command: ./src/generate-steps-from-stored-number.sh | buildkite-agent pipeline upload
+
+- wait
+
+- label: ":desktop_computer:"
+  command: ./src/fetch-and-display-number.sh collect
