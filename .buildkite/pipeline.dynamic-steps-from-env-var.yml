@@ -1,0 +1,10 @@
+steps:
+- label: ":pipeline:"
+  command: ./src/generate-steps-from-env-var.sh | buildkite-agent pipeline upload
+  env:
+    STEPS_COUNT: 4
+
+- wait
+
+- label: ":desktop_computer:"
+  command: ./src/fetch-and-display-number.sh collect

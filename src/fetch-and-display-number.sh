@@ -3,7 +3,7 @@
 action=${1:-}
 
 if [[ "$action" == "collect" ]]; then
-  parallel_numbers=$(buildkite-agent meta-data get generated-number)
+  parallel_numbers=$(buildkite-agent meta-data get steps-count)
   echo "Fetching $parallel_numbers parallel numbers..."
 
   for((i=0;i<parallel_numbers;i++)); do
