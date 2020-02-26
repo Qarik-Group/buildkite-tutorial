@@ -39,3 +39,10 @@ Each pipeline in `.buildkite` folder can be run locally -- without setting up th
 ```plain
 bk local run .buildkite/pipeline.show-environment.yml
 ```
+
+## Create based Docker image
+
+```plain
+docker build -t starkandwayne/buildkite-base .
+docker push starkandwayne/buildkite-base
+```
