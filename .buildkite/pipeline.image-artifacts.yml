@@ -1,0 +1,8 @@
+steps:
+- label: ":camera_with_flash:"
+  command: "ls -al images/*.png"
+  artifact_paths:
+  - "./images/*.png"
+
+- label: ":package:"
+  command: "./src/inspect-image-artifacts.sh"
