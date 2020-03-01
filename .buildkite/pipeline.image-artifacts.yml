@@ -3,6 +3,8 @@ steps:
   command: "ls -al images/*.png"
   artifact_paths:
   - "./images/*.png"
+  key: upload
 
 - label: ":package:"
   command: "./src/inspect-image-artifacts.sh"
+  depends_on: upload
