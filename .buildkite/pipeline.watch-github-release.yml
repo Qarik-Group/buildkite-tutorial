@@ -1,0 +1,10 @@
+steps:
+  - label: ":github:"
+    command: ./src/watch-github-release.sh
+    env:
+      GITHUB_REPO: https://github.com/nodejs/node
+    # plugins:
+    #   - docker#v3.5.0:
+    #       image: "starkandwayne/buildkite-base:latest"
+    #       propagate-environment: true
+    #       mount-buildkite-agent: true
