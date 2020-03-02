@@ -1,0 +1,14 @@
+steps:
+- block: ":inbox_tray:"
+  prompt: "Give me information, and I will give you a new Pipeline."
+  key: "user-data"
+  fields:
+  - text: "How many steps to create?"
+    key: "steps-count"
+    hint: "Think of any number. But a positive number. And not too large, please."
+  - text: "Pipeline name?"
+    key: "pipeline-name"
+    hint: "Name for Buildkite Pipeline to be created"
+
+- label: ":pipeline:"
+  command: "./src/create-pipeline-with-steps.sh"
