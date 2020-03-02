@@ -1,0 +1,9 @@
+steps:
+  - label: ":ballot_box_with_ballot:"
+    command: ./src/generate-and-store-number.sh
+    key: generate-number
+
+  - label: ":desktop_computer:"
+    command: ./src/fetch-and-display-number.sh
+    depends_on:
+    - generate-number
