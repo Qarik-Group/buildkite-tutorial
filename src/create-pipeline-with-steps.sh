@@ -28,4 +28,4 @@ echo curl \
 curl -H "Authorization: Bearer ${BUILDKITE_API_TOKEN_CREATE_PIPELINES}" \
   https://api.buildkite.com/v2/organizations/${BUILDKITE_ORG_SLUG}/pipelines \
   -X POST \
-  -d "$new_pipeline_json"
+  -d "$new_pipeline_json" -f
