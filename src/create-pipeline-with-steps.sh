@@ -19,7 +19,7 @@ new_pipeline_json=$(jq -r \
   --arg name "$pipeline_name" \
   --arg steps_count "$steps_count" \
   --arg repo "$BUILDKITE_REPO_X" \
-  '{"name": $name, "repository": $repo, "env": {"STEPS_COUNT": $steps_count}, "steps": {"label": ":pipeline:", "command": "buildkite-agent pipeline upload .buildkite/pipeline.dynamic-steps-from-env-var.yml"}}' <<< '{}')
+  '{"name": $name, "repository": $repo, "env": {"STEPS_COUNT": $steps_count}, "steps": [{"label": ":pipeline:", "command": "buildkite-agent pipeline upload .buildkite/pipeline.dynamic-steps-from-env-var.yml"}]}' <<< '{}')
 
 echo curl \
   https://api.buildkite.com/v2/organizations/${BUILDKITE_ORG_SLUG}/pipelines \
