@@ -3,6 +3,8 @@
 set -eu
 
 : "${BUILDKITE_API_TOKEN_CREATE_PIPELINES:?required API token with write_pipelines} scope}"
+: "${BUILDKITE_API_TOKEN_CREATE_BUILDS:?required API token with write_builds} scope}"
+
 # allow specification of org when using `bk local run`
 BUILDKITE_ORG_SLUG=${BUILDKITE_ORG_SLUG:-$BUILDKITE_ORGANIZATION_SLUG}
 BUILDKITE_REPO_X=${BUILDKITE_REPO_X:-$BUILDKITE_REPO}
@@ -25,7 +27,16 @@ echo curl \
   https://api.buildkite.com/v2/organizations/${BUILDKITE_ORG_SLUG}/pipelines \
   -X POST \
   -d "$new_pipeline_json"
-curl -H "Authorization: Bearer ${BUILDKITE_API_TOKEN_CREATE_PIPELINES}" \
+create_pipeline_response=$(curl -fsS -H "Authorization: Bearer ${BUILDKITE_API_TOKEN_CREATE_PIPELINES}" \
   https://api.buildkite.com/v2/organizations/${BUILDKITE_ORG_SLUG}/pipelines \
   -X POST \
-  -d "$new_pipeline_json" -f
+  -d "$new_pipeline_json")
+builds_url=$(jq -r ".builds_url" <<< "$create_pipeline_response")
+echo "Pipeline Builds URL: $builds_url"
+
+curl -fsS -H "Authorization: Bearer ${BUILDKITE_API_TOKEN_CREATE_BUILDS}" \
+  "${builds_url}" \
+  -X "POST" \
+  -F "commit=HEAD" \
+  -F "branch=master" \
+  -F "message=First build comes free :rocket:"
