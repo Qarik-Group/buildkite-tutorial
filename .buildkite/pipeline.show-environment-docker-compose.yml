@@ -1,0 +1,8 @@
+steps:
+  - label: ":ubuntu:"
+    command: /app/src/show_environment.sh
+    plugins:
+      - docker-compose#v3.2.0:
+          run: app
+          volumes:
+            - "./src:/app/src"
