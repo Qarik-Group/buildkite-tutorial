@@ -1,0 +1,22 @@
+steps:
+  - label: ":ballot_box_with_ballot:"
+    command: ./src/generate-and-store-number.sh
+    agents:
+      os: linux
+    plugins:
+      - docker#v3.5.0:
+          image: "starkandwayne/buildkite-base:latest"
+          propagate-environment: true
+          mount-buildkite-agent: true
+
+  - wait
+
+  - label: ":desktop_computer:"
+    command: ./src/fetch-and-display-number.sh
+    agents:
+      os: linux
+    plugins:
+      - docker#v3.5.0:
+          image: "starkandwayne/buildkite-base:latest"
+          propagate-environment: true
+          mount-buildkite-agent: true
