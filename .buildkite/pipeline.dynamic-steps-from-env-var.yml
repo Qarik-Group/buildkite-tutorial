@@ -6,4 +6,3 @@ steps:
 
 - label: ":desktop_computer:"
   command: ./src/fetch-and-display-number.sh collect
-
