@@ -1,6 +1,8 @@
-name: "Buildkite Tutorial by Stark & Wayne"
-description: |
-  Learning to :pipeline: is fun.
-steps:
-- label: ":pipeline:"
-  command: buildkite-agent pipeline upload .buildkite/pipeline.show-environment.yml
+- command: echo "test"
+  agents:
+    csp: "aws"
+    git_commit: "3d040dcd8b372eb4945235979d60247e3273"
+    image_repo: "spark"
+    image_tag: "2022-04-11-2230"
+    n_gpus: "0"
+    sparrow_ci_version: "v96"
