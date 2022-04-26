@@ -15,5 +15,5 @@ class Kraken: MythicalBeast {
 } 
 
 //can't use the Kraken class until after the declaration 
-let kraken = Kraken()
-kraken.whatsMyName()
+let mb = MythicalBeast()
+mb.whatsMyName()
