@@ -10,7 +10,7 @@ class MythicalBeast {
 class Kraken: MythicalBeast { 
     override func whatsMyName() { 
         print("I'm the Kraken, yo!") 
-        fputs("[SCUI fputs] This is working with fputs", stdout)
+        fputs("I'm the Kraken, yo!", stdout)
     } 
 } 
 
