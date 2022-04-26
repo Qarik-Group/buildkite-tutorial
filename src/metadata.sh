@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$FOO = buildkite-agent meta-data get "foo"
+$FOO=(buildkite-agent meta-data get "foo")
