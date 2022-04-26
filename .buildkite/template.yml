@@ -1,3 +1,9 @@
 steps:
 - label: ":desktop_computer:"
-  command: ./src/main.swift
+  command: buildkite-agent meta-data set FOO BAR
+- command: ./src/metadata.sh
+  notify:
+      - slack:
+          channels:
+            - "test#test"
+          message: ${FOO}
