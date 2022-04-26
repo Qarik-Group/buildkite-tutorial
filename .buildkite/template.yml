@@ -6,4 +6,4 @@ steps:
       - slack:
           channels:
             - "test#test"
-          message: "test"${FOO}
+          message: "test"
