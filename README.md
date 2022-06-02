@@ -10,7 +10,7 @@ Click the following button to start [the tutorial](https://github.com/starkandwa
 
 Initially you do not need to fork this repo.
 
-No fields need to be changed at this time. Scroll to the bottom to create the new pipeline
+No fields need to be changed at this time. Scroll to the bottom to create the new pipeline.
 
 We can skip the next page "GitHub Webhook Setup" for the moment. Scroll to the bottom and click "Continue to Pipeline".
 
