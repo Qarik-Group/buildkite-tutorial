@@ -1,9 +1,6 @@
+---
 steps:
-- label: ":desktop_computer:"
-  command: buildkite-agent meta-data set FOO BAR
-- command: ./src/metadata.sh
-  notify:
-      - slack:
-          channels:
-            - "test#test"
-          message: $FOO
+- key: metrics-verify-block-development-us-west-2
+  block: Metrics difference detected. Continue to full deployment?
+  prompt: Continue to full deployment?
+  blocked_state: running
