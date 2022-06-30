@@ -8,7 +8,7 @@ Click the following button to start [the tutorial](https://github.com/starkandwa
 
 [![Start tutorial on Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-Initially you do not need to fork this repo
+Initially you do not need to fork this repo.
 
 No fields need to be changed at this time. Scroll to the bottom to create the new pipeline
 
