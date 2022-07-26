@@ -1,3 +1,3 @@
 #!/bin/bash
-value=$(<error.txt)
+export value=$(<error.txt)
 echo "$value"
