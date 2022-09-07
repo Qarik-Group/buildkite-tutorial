@@ -1,0 +1,12 @@
+steps:
+- group: base
+  steps:
+  - block: Release base components to stagecalendar-us-west-2 environment!
+    blocked_state: running
+  - key: deployment:stagecalendar:us-west-2:eks-basecomponents-nodes
+    label: ":ship: - :information_source: Base Components to stagecalendar in us-west-2"
+    commands:
+    - echo "--- Deploy base EKS and Kubernetes components"
+    concurrency: 1
+    concurrency_group: eks_deploy_stagecalendar
+    timeout_in_minutes: 180
