@@ -1,0 +1,10 @@
+steps:
+- group: drainer
+  steps:
+  - block: Release Drainer to stagecalendar-us-west-2 environment!
+    blocked_state: running
+  - label: ":ship: - :eject: Drainer!"
+    commands:
+    - echo "drainer"
+    concurrency: 1
+    concurrency_group: eks_deploy_stagecalendar
