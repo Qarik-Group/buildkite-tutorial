@@ -5,5 +5,5 @@ steps:
   - key: pipeline-generate:eks-deploy-stagecalendar-us-west-2
     label: ":pipeline: Generate Nodegroup Deployment Pipelines"
     commands:
-    - buildkite-agent pipeline upload pipeline.yaml
+    - buildkite-agent pipeline upload .buildkite/pipeline.yaml
     timeout_in_minutes: 5
