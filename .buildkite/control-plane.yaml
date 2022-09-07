@@ -1,0 +1,13 @@
+---
+steps:
+- group: control-plane
+  steps:
+  - block: Release control plane deployment in stagecalendar-us-west-2
+    blocked_state: running
+  - wait: 
+  - label: ":ship: - :kubernetes: EKS to stagecalendar in us-west-2"
+    commands:
+    - echo "--- Deploy EKS control plane"
+    concurrency: 1
+    concurrency_group: eks_deploy_stagecalendar
+    timeout_in_minutes: 180
