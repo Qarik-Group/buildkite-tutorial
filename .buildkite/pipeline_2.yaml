@@ -1,0 +1,11 @@
+steps:
+- group: addons_k8s-image-swapper
+  steps:
+  - block: Release k8s-image-swapper add-on to stagecalendar-us-west-2 environment!
+    blocked_state: running
+  - label: ":ship: - :kubernetes: k8s-image-swapper add-on to stagecalendar in us-west-2"
+    commands:
+    - echo "--- Deploy k8s-image-swapper add-on"
+    concurrency: 1
+    concurrency_group: eks_deploy_stagecalendar
+    timeout_in_minutes: 180
