@@ -3,4 +3,4 @@ steps:
   steps:
   - label: ":buildkite: [k8s-image-swapper] upload deployment steps"
     command: |
-      buildkite-agent pipeline upload pipeline_2.yaml
+      buildkite-agent pipeline upload .buildkite/pipeline_2.yaml
