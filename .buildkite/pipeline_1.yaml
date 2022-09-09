@@ -1,0 +1,6 @@
+steps:
+- group: addons_k8s-image-swapper
+  steps:
+  - label: ":buildkite: [k8s-image-swapper] upload deployment steps"
+    command: |
+      buildkite-agent pipeline upload pipeline_2.yaml
