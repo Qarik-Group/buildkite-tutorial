@@ -1,0 +1,11 @@
+steps:
+- label: ":monorail: Check addons in calendar/stagecalendar/us-west-2 for changes"
+  group: addons_k8s-image-swapper
+  steps:
+    - label: ":buildkite: [k8s-image-swapper] upload deployment steps"
+      command: buildkite-agent pipeline upload .buildkite/pipeline_1.yaml
+  depends_on: 
+- wait: 
+- label: ":git: Tagging stagecalendar-us-west-2 release as current"
+  commands:
+  - echo "Tagging stagecalendar-us-west-2 release as current"
