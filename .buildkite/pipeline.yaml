@@ -1,2 +1,4 @@
 steps:
-- wait: 
+- command: echo $$key1
+- command: echo $$key2
+- command: echo $$key3
