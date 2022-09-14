@@ -1,4 +1,4 @@
 steps:
-- command: echo $$ENV
+- command: echo $ENV
 - command: echo $$key2
 - command: echo $$key3
