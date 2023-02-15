@@ -3,6 +3,7 @@ steps:
   command: |
        if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "" ]; then
               echo "Exporting build variables"
+              echo $SHOULD_BUILD
        fi
   env:
    SHOULD_BUILD: "true"
