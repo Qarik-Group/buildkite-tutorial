@@ -1,0 +1,4 @@
+if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "" ]; then
+       echo "Exporting build variables"
+       export SHOULD_BUILD="true"
+fi
