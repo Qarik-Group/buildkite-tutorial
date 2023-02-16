@@ -2,8 +2,5 @@
 set -eu
 
 if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "" ]; then
-    echo "Exporting build variables"
-    export SHOULD_BUILD_HW1="true"
-    export SHOULD_BUILD_HW2="true"
-    export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
+     export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
 fi
