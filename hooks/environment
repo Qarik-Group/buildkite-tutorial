@@ -1,6 +1,4 @@
 #!/bin/bash
 set -eu
 
-if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "" ]; then
-     export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
-fi
+export MANIFEST_BRANCH='APPLE'
