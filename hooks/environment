@@ -1,6 +1,7 @@
 #!/bin/bash
-set -ueo pipefail
+set -euo pipefail
 
-export BUILDKITE_REPO=""
-export BUILDKITE_PLUGIN_DOCKER_COMPOSE_REQUIRE_PREBUILD="true"
-export mystuff='hello'
+if [[ "$BUILDKITE_PIPELINE_SLUG" == "samplequestions2" ]]; then
+      export SHOULD_BUILD_HW1="true"
+      export SHOULD_BUILD_HW2="true"
+fi
