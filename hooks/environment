@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eu
 
-export BUILDKITE_BUILD_AUTHOR='stephanie___'
+export BUILDKITE_STEPHANIE='stephanie___'
