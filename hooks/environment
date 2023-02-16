@@ -4,4 +4,5 @@ set -euo pipefail
 if [[ "$BUILDKITE_PIPELINE_SLUG" == "samplequestions2" ]]; then
       export SHOULD_BUILD_HW1="true"
       export SHOULD_BUILD_HW2="true"
+      export MANIFEST_BRANCH=$BUILDKITE_BRANCH
 fi
