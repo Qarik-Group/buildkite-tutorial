@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eu
 
-export MANIFEST_BRANCH='APPLE'
+export BUILDKITE_BUILD_AUTHOR='stephanie___'
