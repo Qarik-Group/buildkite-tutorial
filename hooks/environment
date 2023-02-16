@@ -1,4 +1,6 @@
 #!/bin/bash
-set -eu
+set -ueo pipefail
 
-export BUILDKITE_STEPHANIE='stephanie___'
+export BUILDKITE_REPO=""
+export BUILDKITE_PLUGIN_DOCKER_COMPOSE_REQUIRE_PREBUILD="true"
+export mystuff='hello'
