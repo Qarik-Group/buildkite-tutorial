@@ -1,0 +1,12 @@
+success-spec: &success-spec
+  restartPolicy: OnFailure
+  containers:
+    - name: ${BUILDKITE_PIPELINE_SLUG}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_STEP_ID}-success
+      image: deftinc/winpenguin
+      command: ["/app/entrypoint.sh"]
+
+steps:
+  - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
+    plugins:
+      - k8s-job:
+          pod-spec: *success-spec
