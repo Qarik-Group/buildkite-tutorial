@@ -12,3 +12,4 @@ steps:
     plugins:
       - k8s-job:
           pod-spec: *success-spec
+          cleanup: false
