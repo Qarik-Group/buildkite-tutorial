@@ -2,7 +2,8 @@ success-spec: &success-spec
   restartPolicy: OnFailure
   containers:
     - name: ${BUILDKITE_PIPELINE_SLUG}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_STEP_ID}-success
-      image: alpine
+      image: perl:5.34.0
+      command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000000000000000)"]
 
 steps:
   - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
