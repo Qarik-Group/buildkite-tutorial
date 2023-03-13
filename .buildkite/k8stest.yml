@@ -2,8 +2,8 @@ success-spec: &success-spec
   restartPolicy: OnFailure
   containers:
     - name: ${BUILDKITE_PIPELINE_SLUG}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_STEP_ID}-success
-      image: deftinc/winpenguin
-      command: ["/app/entrypoint.sh"]
+      image: alpine
+      command: sleep 1d
 
 steps:
   - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
