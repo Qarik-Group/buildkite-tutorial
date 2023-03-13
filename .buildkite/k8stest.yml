@@ -8,6 +8,6 @@ success-spec: &success-spec
 steps:
   - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
     plugins:
-      - k8s-job:
+      - k8s-job#rest-api:
           pod-spec: *success-spec
           cleanup: false
