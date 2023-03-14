@@ -7,6 +7,8 @@ success-spec: &success-spec
 
 steps:
   - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
+    agents:
+      queue: local
     plugins:
       - k8s-job:
           pod-spec: *success-spec
