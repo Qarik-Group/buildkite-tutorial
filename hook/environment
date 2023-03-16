@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-
+export baby="babyboo"
 if [[ "$$BUILDKITE_PIPELINE_SLUG" == "samplequestion4" ]]; then
   export BUILDKITE_ANALYTICS_TOKEN="oS3AG0eBuUJMWRgkRvek"
   export baby="babyboo"
