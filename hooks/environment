@@ -1,8 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ "$BUILDKITE_PIPELINE_SLUG" == "samplequestions2" ]]; then
+if [ "$BUILDKITE_PULL_REQUEST_BASE_BRANCH" == "dunfell" ]; then
+      echo "The branch being built is: $BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+      echo "Exporting build variables"
       export SHOULD_BUILD_HW1="true"
       export SHOULD_BUILD_HW2="true"
-      export MANIFEST_BRANCH=$BUILDKITE_BRANCH
+      export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
 fi
