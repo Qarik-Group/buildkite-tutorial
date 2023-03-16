@@ -1,10 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-if [ "$BUILDKITE_BRANCH =="master" ]; then
-      echo "The branch being built is: $BUILDKITE_PULL_REQUEST_BASE_BRANCH"
-      echo "Exporting build variables"
-      export SHOULD_BUILD_HW1="true"
-      export SHOULD_BUILD_HW2="true"
-      export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
+if ["$BUILDKITE_BRANCH =="master" ]; then
+            echo "The branch being built is: $BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+            echo "Exporting build variables"
+            export SHOULD_BUILD_HW1="true"
+            export SHOULD_BUILD_HW2="true"
+            export MANIFEST_BRANCH="$BUILDKITE_BRANCH"
 fi
