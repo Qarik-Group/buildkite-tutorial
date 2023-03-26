@@ -1,0 +1,13 @@
+success-spec: &success-spec
+  restartPolicy: OnFailure
+  containers:
+    - name: ${BUILDKITE_PIPELINE_SLUG}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_STEP_ID}-success
+      image: busybox:1.28
+      command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+
+steps:
+  - label: "Consulting my :crystal_ball: thats inside my :k8s: pod"
+    plugins:
+      - k8s-job:
+          pod-spec: *success-spec
+          cleanup: false
