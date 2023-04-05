@@ -1,3 +1,4 @@
+# This is test commit status for parallel job failure
 steps:
   - command: ./src/tests.sh
     label: "Test %n"
