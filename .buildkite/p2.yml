@@ -1,0 +1,5 @@
+env:
+  FOO: "baz"
+
+steps:
+  - command: echo "+++ p2 - $$FOO"
