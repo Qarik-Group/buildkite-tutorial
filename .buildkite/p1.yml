@@ -1,0 +1,5 @@
+env:
+  FOO: "bar"
+
+steps:
+  - command: echo "+++ p1 - $$FOO"
