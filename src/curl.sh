@@ -7,3 +7,5 @@ cat << EOF > config.yaml
 steps:
   - trigger: testtrigger
 EOF
+
+buildkite-agent pipeline upload config.yaml
