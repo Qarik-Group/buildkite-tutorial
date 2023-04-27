@@ -3,9 +3,9 @@
 set -eu
 
 # Generate YAML file
-cat << EOF > config.yaml
+cat << EOF > configs.yaml
 steps:
   - trigger: testtrigger
 EOF
 
-buildkite-agent pipeline upload config.yaml
+buildkite-agent pipeline upload configs.yaml
