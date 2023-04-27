@@ -1,4 +1,4 @@
 steps:
   - command: ./src/tests.sh
     label: "Test %n"
-    parallelism: 5
+    parallelism: 4
