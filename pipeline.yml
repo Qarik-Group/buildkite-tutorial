@@ -12,7 +12,6 @@ steps:
 
   - command: echo "Running deployment to staging environment"
     key: stage-deploy
-    depends_on: start-gate
 
   - command: echo "Running e2e tests after the deployment"
     parallelism: 3
