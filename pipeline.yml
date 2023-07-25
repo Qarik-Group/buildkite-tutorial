@@ -16,7 +16,6 @@ steps:
 
   - command: echo "Running e2e tests after the deployment"
     parallelism: 3
-    depends_on: [stage-deploy]
     key: e2e
 
   - wait
