@@ -5,7 +5,7 @@ steps:
     env:
       os: "{{matrix}}"
     matrix:
-      - "darwin"
+      - "$$BUILDKITE_PIPELINE_ID"
       - "Linux"
       - "Windows"
 notify:
