@@ -1,6 +1,6 @@
 steps:
-  - command: "exit -1"
+  - command: "echo hi"
 
 notify:
   - email: "stephanie@buildkite.com"
-    if: build.state == "failing"
+    if: build.state == "passed"
