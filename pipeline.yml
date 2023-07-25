@@ -1,6 +1,13 @@
 steps:
   - command: "echo hi"
-
+  - label: "build" 
+    command: "GOOS=go build" 
+    env: 
+    os: "" 
+    matrix: 
+      - "darwin" 
+      - "Linux" 
+      - "Windows"
 notify:
   - email: "stephanie@buildkite.com"
     if: build.state == "passed"
