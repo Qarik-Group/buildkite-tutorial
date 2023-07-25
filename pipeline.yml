@@ -8,3 +8,5 @@ steps:
       - "Linux"
       - "Windows"
 
+notify:
+  - email: "stephanie@buildkite.com"
