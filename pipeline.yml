@@ -1,6 +1,6 @@
 steps:
   - label: "{{matrix}} build"
-    command: "exit -1"
+    command: "echo hi"
     env:
       os: "{{matrix}}"
     matrix:
