@@ -1,6 +1,6 @@
 steps:
   - label: "{{matrix}} build"
-    command: "echo GOOS={{matrix}} "
+    command: "exit -1"
     env:
       os: "{{matrix}}"
     matrix:
