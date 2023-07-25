@@ -1,12 +1,31 @@
 steps:
-  - label: "{{matrix}} build"
-    command: "exit -1"
-    env:
-      os: "{{matrix}}"
-    matrix:
-      - "$$BUILDKITE_MESSAGE"
-      - "Linux"
-      - "Windows"
+  - command: echo "Running unit tests"
+    key: unit-tests
 
-notify:
-  - email: "stephanie@buildkite.com"
+  - command: echo "--> Start of concurrency gate"
+    concurrency_group: gate
+    concurrency: 1
+    key: start-gate
+    depends_on: unit-tests
+
+  - wait
+
+  - command: echo "Running deployment to staging environment"
+    key: stage-deploy
+    depends_on: start-gate
+
+  - command: echo "Running e2e tests after the deployment"
+    parallelism: 3
+    depends_on: [stage-deploy]
+    key: e2e
+
+  - wait
+
+  - command: echo "End of concurrency gate <--"
+    concurrency_group: gate
+    concurrency: 1
+    key: end-gate
+
+  - command: echo "This and subsequent steps run independently"
+    depends_on: end-gate
+
