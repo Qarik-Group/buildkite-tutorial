@@ -1,11 +1,10 @@
 steps:
-steps:
   - label: "{{matrix}} build"
     command: "echo GOOS={{matrix}} "
     env:
       os: "{{matrix}}"
     matrix:
-      - "$$BUILDKITE_PIPELINE_ID"
+      - "$$BUILDKITE_MESSAGE"
       - "Linux"
       - "Windows"
 notify:
