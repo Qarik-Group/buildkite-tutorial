@@ -1,29 +1,3 @@
 steps:
-  - command: echo "Running unit tests"
-    key: unit-tests
-
-  - command: echo "--> Start of concurrency gate"
-    concurrency_group: gate
-    concurrency: 1
-    key: start-gate
-    depends_on: unit-tests
-
-  - wait
-
-  - command: echo "Running deployment to staging environment"
-    key: stage-deploy
-
-  - command: echo "Running e2e tests after the deployment"
-    parallelism: 3
-    key: e2e
-
-  - wait
-
-  - command: echo "End of concurrency gate <--"
-    concurrency_group: gate
-    concurrency: 1
-    key: end-gate
-
-  - command: echo "This and subsequent steps run independently"
-    depends_on: end-gate
-
+  - command: "exit -1"
+   
