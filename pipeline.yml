@@ -1,3 +1,4 @@
 steps:
   - command: "exit -1"
+    soft_fail: true
    
