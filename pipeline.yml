@@ -1,5 +1,5 @@
 steps:
-  - command: "exit -1"
+  - command: "echo hi"
     soft_fail: true
     key: 'one'
 
