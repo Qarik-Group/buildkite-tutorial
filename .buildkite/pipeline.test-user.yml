@@ -1,0 +1,3 @@
+steps:
+  - label: ":desktop_computer:"
+    command: ./src/watch-github-release.sh
