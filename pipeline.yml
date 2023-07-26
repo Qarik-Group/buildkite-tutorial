@@ -6,6 +6,13 @@ steps:
   - label: 'Step 5'
     command: |
       if [ $(buildkite-agent step get "outcome" --step "one") == "soft_failed" ]; then
-        buildkite-agent annotate 'this build failed' --style 'error'
+         cat <<- YAML | buildkite-agent pipeline upload
+         steps:
+           - label: "Commit status for soft fail"
+             command: "echo inside commit"
+             notify:
+                - github_commit_status:
+                    context: "my-custom-status-for-soft-fail"
+      YAML
       fi
-   
+ 
