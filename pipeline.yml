@@ -1,4 +1,11 @@
 steps:
   - command: "exit -1"
     soft_fail: true
+    key: 'one'
+
+  - label: 'Step 5'
+    command: |
+      if [ $(buildkite-agent step get "outcome" --step "one") == "hard_failed" ]; then
+        buildkite-agent annotate 'this build failed' --style 'error'
+      fi
    
