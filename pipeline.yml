@@ -12,7 +12,7 @@ steps:
              command: "echo inside commit"
              notify:
                 - github_commit_status:
-                    context: "my-custom-status-for-soft-fail"
+                    context: "my-status-for-soft-fail"
       YAML
       fi
  
