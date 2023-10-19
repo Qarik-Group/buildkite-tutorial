@@ -1,0 +1,16 @@
+steps:
+  - command: "echo hi"
+    soft_fail: true
+    key: 'one'
+
+  - label: 'Step 5'
+    command: |
+      if [ $(buildkite-agent step get "outcome" --step "one") == "soft_failed" ]; then
+         cat <<- YAML | buildkite-agent pipeline upload
+         steps:
+             notify:
+                - github_commit_status:
+                    context: "my-status-for-soft-fadfdfil"
+      YAML
+      fi
+ 

@@ -1,9 +1,9 @@
 # Buildkite Tutorial
 
-This repo contains various Buildkite pipelines for a tutorial (soon to be published) on Stark & Wayne blog.
+hello This repo contains various Buildkite pipelines for a tutorial (soon to be published) on Stark & Wayne blog.
 
 ## Get started
-
+try pr without pr checkbox and master-new selected
 Click the following button to start [the tutorial](https://github.com/starkandwayne/buildkite-tutorial) on your [free Buildkite account](https://buildkite.com/pricing):
 
 [![Start tutorial on Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
